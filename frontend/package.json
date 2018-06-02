@@ -1,0 +1,22 @@
+{
+  "name": "polymer-starter-kit",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "coffeescript": "^2.2.3",
+    "eslint": "^3.19.0",
+    "eslint-config-google": "^0.7.0",
+    "eslint-plugin-html": "^2.0.0",
+    "jstransformer-stylus": "^1.4.0",
+    "pug": "^2.0.0-rc.4",
+    "stylus": "^0.54.5"
+  },
+  "scripts": {
+    "lint": "npm run lint:javascript && polymer lint",
+    "lint:javascript": "eslint . --ext js,html --ignore-path .gitignore",
+    "test": "polymer test",
+    "test:integration": "polymer build # test that psk builds without error with the CLI",
+    "pug": "coffee --compile --bare opinionated/src && pug --pretty opinionated/src",
+    "fix": "find ./opinionated/src/ -name \"*.html\" -exec perl -pi -e \"s/(is|properties|observers)\\(/static get \\1\\(/g\" '{}' \\;",
+    "transpile": "npm run pug && npm run fix && find ./opinionated/src -name '*.html' -exec mv {} src \\;"
+  }
+}

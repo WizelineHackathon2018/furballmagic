@@ -1,0 +1,18 @@
+link(rel='import' href='../bower_components/polymer/polymer-element.html')
+link(rel='import' href='shared-styles.html')
+
+dom-module#webapp-dashboard
+  template
+    style.
+      :host {
+        display: block;
+      }
+
+    style(include='shared-styles')
+    style
+      include:stylus ./webapp-dashboard.styl
+    div 
+     p Element contents
+
+  script
+    include ./webapp-dashboard.js
