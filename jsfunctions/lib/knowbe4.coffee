@@ -53,6 +53,7 @@ module.exports.completed = (parameters) ->
     json: true
   .then (apiResponse) ->
     usersInKnowbe4Group = apiResponse
+    # console.log 'apiResponse', apiResponse
     gdriveCSV.readFileAsCSV(fileId)
   .then (gdriveResponse) ->
     unless parameters.accountOrProject is 'account' or
@@ -63,6 +64,7 @@ module.exports.completed = (parameters) ->
     # if this is project, the obj key is project
     # TODO: maybe there is a better way, like uppercase the first letter
     #
+
     key = 'Project'
     if parameters.accountOrProject is 'account'
       key = 'Account'
@@ -74,6 +76,7 @@ module.exports.completed = (parameters) ->
       for anotherPerson in usersInKnowbe4Group
         continue unless person.Email is anotherPerson.email
         statusList.completed.push person
+
         skip = true
 
       statusList.noCompleted.push person unless skip
