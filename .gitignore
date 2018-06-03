@@ -65,3 +65,7 @@ build
 
 #gdrive keyfile
 jsfunctions/lib/bishop-38a558e04dc4.json
+
+
+current_state/dist
+credentials.json
