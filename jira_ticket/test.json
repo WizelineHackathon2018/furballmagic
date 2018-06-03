@@ -1,0 +1,6 @@
+{
+  "_endpoint": "https://i4v2kax8o4.execute-api.us-east-2.amazonaws.com/production/jira-ticket",
+  "summary": "New issue from jira-python4",
+  "description": "New issue from jira-python",
+  "assignee": "saul.ortigoza@wizeline.com"
+}

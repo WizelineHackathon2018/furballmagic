@@ -1,0 +1,13 @@
+region: us-east-2
+
+function_name: create_jira_tiket
+handler: main.handler
+description: Api used to create a tiket in jira
+runtime: python3.6
+role: lambda_basic_execution
+timeout: 30
+memory_size: 512
+environment_variables:
+  JIRA_URL: ${JIRA_URL}
+  JIRA_USER: ${JIRA_USER}
+  JIRA_PASS: ${JIRA_PASS}
